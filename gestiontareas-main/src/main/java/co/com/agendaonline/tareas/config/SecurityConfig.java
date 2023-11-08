@@ -4,13 +4,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+/*import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;*/
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableGlobalMethodSecurity(securedEnabled=true)
@@ -44,17 +46,16 @@ public class SecurityConfig {
  	}*/
 	
 	@Bean
- 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
- 		http
- 		.authorizeRequests()
-        .antMatchers("/tarea/**","/css/**","/js/**","/images/**","/h2-console/**").permitAll() // Permite el acceso sin autenticación a /tareas/
-        .anyRequest().authenticated()
-        .and() // Desactiva la página de inicio de sesión por defecto
-        .logout()
-        .permitAll();
-		
- 		return http.build();
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	    http
+	        .authorizeRequests()
+	            .antMatchers("/tarea/**", "/css/**", "/js/**", "/images/**", "/h2-console/**").permitAll()
+	            .antMatchers("/evento/**").permitAll() // También permite acceso sin autenticación a /evento/**
+	            .anyRequest();
+	    
+	    return http.build();
 	}
+
  		/*.formLogin().loginPage("/tarea").permitAll() 
  		.and()
  		.logout().permitAll()*/
@@ -66,7 +67,8 @@ public class SecurityConfig {
  		//*************
  		
  		//return http.build();
-
+	
+	//FALTAAAAAAAA  corregir!
 	
 		
 }

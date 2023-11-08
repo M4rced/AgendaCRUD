@@ -25,6 +25,7 @@ public class MainController {
 		return "redirect:/tarea";
 	}
 	
+	
 	@GetMapping("/upload/{filename:.+}")
 	public ResponseEntity<Resource> viewImage(@PathVariable String filename) {
 		

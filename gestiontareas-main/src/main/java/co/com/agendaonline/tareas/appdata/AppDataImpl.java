@@ -30,33 +30,45 @@ public class AppDataImpl  implements AppData {
 		int order=0;
 		
 		GeneralOption opTarea = new GeneralOption(order,"TAREA","Lista de Tareas","/tarea/list","LIST");
-
-opTarea.addScreen("LIST","Tarea (List)");
-opTarea.addScreen("CREATE","Tarea (Create)");
-opTarea.addScreen("UPDATE","Tarea (Update)");
-opTarea.addScreen("VIEW","Tarea (View)");
-opTarea.addScreen("VIEWIMG","Tarea - View Image");
-
-opTarea.setEmptyMessage("No data");
-
-generalOptions.put("TAREA",opTarea);
-sortedGeneralOptions.add(opTarea);
-
-order++;
-
-
 		
+
+		opTarea.addScreen("LIST","Tarea (List)");
+		opTarea.addScreen("CREATE","Tarea (Create)");
+		opTarea.addScreen("UPDATE","Tarea (Update)");
+		opTarea.addScreen("VIEW","Tarea (View)");
+		opTarea.addScreen("VIEWIMG","Tarea - View Image");
+
+		opTarea.setEmptyMessage("No data");
+		
+		generalOptions.put("TAREA",opTarea);
+		sortedGeneralOptions.add(opTarea);
+		
+		order++;
+		Collections.sort(sortedGeneralOptions);
+		
+		GeneralOption opEvento = new GeneralOption(order,"EVENTO","Lista de eventos","//list","LIST");
+		
+		opEvento.addScreen("LIST","evento (List)");
+		opEvento.addScreen("CREATE","evento (Create)");
+		opEvento.addScreen("UPDATE","evento (Update)");
+		opEvento.addScreen("VIEW","evento (View)");
+		opEvento.addScreen("VIEWIMG","evento - View Image");
+		
+		opEvento.setEmptyMessage("No data");
+		
+		generalOptions.put("EVENTO",opEvento);
+		sortedGeneralOptions.add(opEvento);
+		
+		order++;
 		Collections.sort(sortedGeneralOptions);
 		
 	}
-	
-	
+
 	@Override
 	public String getName() {
 		return name;
 	}
-	
-	
+
 	@Override
 	public String getAuthor() {
 		return author;
