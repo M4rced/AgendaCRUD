@@ -62,83 +62,126 @@ public class Evento implements Serializable {
 		super();
 	}
 
-	public  Long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public  String getTitulo() {
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public String getTitulo() {
 		return titulo;
 	}
 
-	public  LocalDate getFechaInicio() {
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+
+	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
+
+
+
+	public void setFechaInicio(LocalDate fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+
 
 	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
 
-	public  Integer getHoras() {
+
+
+	public void setFechaFin(LocalDate fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+
+
+
+	public Integer getHoras() {
 		return horas;
 	}
+
+
+
+	public void setHoras(Integer horas) {
+		this.horas = horas;
+	}
+
+
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public  String getNivelPrioridad() {
-		return nivelPrioridad;
-	}
 
-	public  String getAsignada() {
-		return asignada;
-	}
 
-	private final void setId(final Long id) {
-		this.id = id;
-	}
-
-	private final void setTitulo(final String titulo) {
-		this.titulo = titulo;
-	}
-
-	private final void setFechaInicio(final LocalDate fechaInicio) {
-		this.fechaInicio = fechaInicio;
-	}
-
-	private final void setFechaFin(final LocalDate fechaFin) {
-		this.fechaFin = fechaFin;
-	}
-
-	private final void setHoras(final Integer horas) {
-		this.horas = horas;
-	}
-
-	private final void setDescripcion(final String descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-	private final void setNivelPrioridad(final String nivelPrioridad) {
+
+
+	public String getNivelPrioridad() {
+		return nivelPrioridad;
+	}
+
+
+
+	public void setNivelPrioridad(String nivelPrioridad) {
 		this.nivelPrioridad = nivelPrioridad;
 	}
 
-	private final void setAsignada(final String asignada) {
+
+
+	public String getAsignada() {
+		return asignada;
+	}
+
+
+
+	public void setAsignada(String asignada) {
 		this.asignada = asignada;
 	}
-	
+
+
+
 	public String getFoto1() {
-		return getFoto1();
+		return foto1;
 	}
+
+
+
 	public void setFoto1(String foto1) {
-	this.foto1 = foto1;
+		this.foto1 = foto1;
 	}
+
+
+
 	public String getFoto2() {
-		return getFoto2();
+		return foto2;
 	}
+
+
+
 	public void setFoto2(String foto2) {
-	this.foto2 = foto2;
+		this.foto2 = foto2;
 	}
-	
+
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -156,9 +199,6 @@ public class Evento implements Serializable {
 		Tarea other = (Tarea) obj;
 		return Objects.equals(id, other.getId());
 	}
-
-
-	private static final long serialVersionUID = 1L;
 	
 
 }

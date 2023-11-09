@@ -27,7 +27,7 @@ import co.com.agendaonline.tareas.models.services.UploadService;
 import co.com.agendaonline.tareas.util.paginator.PageRender;
 
 @Controller
-//@SessionAttributes("evento")
+
 @RequestMapping("/evento")
 public class EventoController {
 	
